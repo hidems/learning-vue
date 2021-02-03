@@ -7,7 +7,16 @@ var test_data = {
 // Vue インスタンスにオブジェクトを追加する
 var vm = new Vue({
     el: "#vue-1",
-  data: test_data
+  data: test_data,
+  beforeCreate: function() {
+      console.log("before")
+  },
+  mounted: function() {
+      console.log("mounted")
+  },
+  updated: function() {
+      console.log("updated")
+  }
 })
 
 // インスタンスのプロパティを取得すると、
