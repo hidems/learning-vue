@@ -3,6 +3,7 @@ var test_data = { a: 1 }
 
 // Vue インスタンスにオブジェクトを追加する
 var vm = new Vue({
+    el: "#vue-1",
   data: test_data
 })
 
