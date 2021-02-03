@@ -15,6 +15,15 @@
 
         <p v-bind:id="myId">Using mustaches: {{ rawHtml }}</p>
         <button v-bind:disabled="bool" >Using v-html directive: <span v-html="rawHtml"></span></button>
+        <br>
+
+        {{ number + 1 }}
+        
+        {{ ok ? 'YES' : 'NO' }}
+        
+        {{ message.split('').reverse().join('') }}
+        
+        <div v-bind:id="'list-' + id">list-{{id}}</div>
     </div>
 </body>
 <script src="template.js"></script>
