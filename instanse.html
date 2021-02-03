@@ -10,6 +10,13 @@
 <body>
     <div id="vue-1">
         {{ a }}
+        {{ b }}
+    </div>
+
+    <div id="app">
+        <p>{{ foo }}</p>
+        <!-- これは `foo` を更新しなくなります! -->
+        <button v-on:click="foo = 'baz'">Change it</button>
     </div>
 </body>
 <script src="vue_instanse.js"></script>

@@ -1,5 +1,8 @@
 // データオブジェクト
-var test_data = { a: 1 }
+var test_data = {
+    a: 1,
+    b: 4
+}
 
 // Vue インスタンスにオブジェクトを追加する
 var vm = new Vue({
@@ -18,3 +21,14 @@ test_data.a // => 2
 // ... そして、その逆もまたしかりです
 test_data.a = 3
 vm.a // => 3
+
+var obj = {
+  foo: 'bar'
+}
+
+Object.freeze(obj)
+
+new Vue({
+  el: '#app',
+  data: obj
+})
