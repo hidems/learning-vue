@@ -12,7 +12,8 @@
     <div id="app">
         <span>This will never change: {{ msg }}</span><br>
         <span v-once>This will never change: {{ msg }}</span>
-        <p>Using mustaches: {{ rawHtml }}</p>
+
+        <p v-bind:id="myId">Using mustaches: {{ rawHtml }}</p>
         <p>Using v-html directive: <span v-html="rawHtml"></span></p>
     </div>
 </body>
