@@ -14,7 +14,7 @@
         <span v-once>This will never change: {{ msg }}</span>
 
         <p v-bind:id="myId">Using mustaches: {{ rawHtml }}</p>
-        <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+        <button v-bind:disabled="bool" >Using v-html directive: <span v-html="rawHtml"></span></button>
     </div>
 </body>
 <script src="template.js"></script>
