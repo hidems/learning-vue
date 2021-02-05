@@ -10,12 +10,10 @@
 
 <body>
     <div id="app">
-        <p v-if="seen">Now you see me</p>
-        <a v-bind:href="url">Google</a>
-        <br>
-        <a :[attribute]="url">Google2</a>
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
     </div>
 </body>
-<script src="directive.js"></script>
+<script src="computed_propaty.js"></script>
 
 </html>
