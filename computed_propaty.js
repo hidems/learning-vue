@@ -11,5 +11,10 @@ var vm = new Vue({
       // `this` は vm インスタンスを指します
       return this.message.split('').reverse().join('')
       }
+  },
+  methods: {
+    reverseMessage: function () {
+      return this.message.split('').reverse().join('')
+    }
   }
 })
