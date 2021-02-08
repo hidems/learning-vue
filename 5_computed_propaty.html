@@ -26,6 +26,15 @@
         </p>
         <p>{{ answer }}</p>
     </div>
+
+    <div id="birth">
+        <h1>Birth date</h1>
+        <input type="text" v-model="year">
+        <input type="text" v-model="month">
+        <input type="text" v-model="day">
+        <p>{{ age }} years old</p>
+        <p>{{ week }}</p>
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>

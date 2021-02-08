@@ -88,3 +88,42 @@ var watchExampleVM = new Vue({
     }
   }
 })
+
+let dayOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+]
+
+var birth = new Vue({
+  el: '#birth',
+  data: {
+    year: 2021,
+    month: 2,
+    day: 8,
+  },
+  computed: {
+    birthday: function () {
+      return new Date(this.year, this.month - 1, this.day);
+    },
+    age: function () {
+      let today = new Date();
+      let age = today.getYear() - this.birthday.getYear();
+      if (today.getMonth() == this.birthday.getMonth()) {
+        if (today.getDate() < this.birthday.getDate()) {
+          age -= 1;
+        }
+      } else if (today.getMonth() < this.birthday.getMonth()) {
+        age -= 1;
+      }
+      return age;
+    },
+    week: function () {
+      return dayOfWeek[this.birthday.getDay()];
+    }, 
+  }
+})
