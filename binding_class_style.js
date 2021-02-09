@@ -7,5 +7,13 @@ var vm = new Vue({
       active: true,
       'text-danger': false
     }
+  },
+  computed: {
+    classObjectByComputed: function () {
+      return {
+        active: this.isActive && !this.hasError,
+        'text-danger': this.hasError && this.hasError.type === 'fatal'
+      }
+    }
   }
 }) 
