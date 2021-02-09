@@ -6,7 +6,9 @@ var vm = new Vue({
     classObject: {
       active: true,
       'text-danger': false
-    }
+    },
+    activeClass: 'active',
+    errorClass: 'text-danger'
   },
   computed: {
     classObjectByComputed: function () {

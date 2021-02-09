@@ -29,6 +29,10 @@
         <div v-bind:class="classObjectByComputed">
             Class Object
         </div>
+        <br>
+        <div v-bind:class="[activeClass, errorClass]">
+            Class binding by Array
+        </div>
     </div>
 </body>
 
