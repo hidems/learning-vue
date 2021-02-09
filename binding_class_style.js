@@ -11,6 +11,10 @@ var vm = new Vue({
     errorClass: 'text-danger',
     activeColor: 'green',
     fontSize: 50,
+    styleObject: {
+      color: 'blue',
+      fontSize: '100px'
+  }
   },
   computed: {
     classObjectByComputed: function () {
