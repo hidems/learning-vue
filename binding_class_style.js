@@ -8,7 +8,9 @@ var vm = new Vue({
       'text-danger': false
     },
     activeClass: 'active',
-    errorClass: 'text-danger'
+    errorClass: 'text-danger',
+    activeColor: 'green',
+    fontSize: 50,
   },
   computed: {
     classObjectByComputed: function () {
