@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Practise Template</title>
+    <title>Vue Practise Binding Class and Style</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <style>
         .active {
@@ -18,7 +18,13 @@
 
 <body>
     <div id="app">
-        <div v-bind:class="{ active:isActive, 'text-danger': hasError }">TEST</div>
+        <div v-bind:class="{ active:isActive, 'text-danger': hasError }">
+            Binding class
+        </div>
+        <br>
+        <div v-bind:class="classObject">
+            Class Object
+        </div>
     </div>
 </body>
 

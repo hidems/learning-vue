@@ -3,5 +3,9 @@ var vm = new Vue({
   data: {
     isActive: true,
     hasError: false,
+    classObject: {
+      active: true,
+      'text-danger': false
+    }
   }
 }) 
