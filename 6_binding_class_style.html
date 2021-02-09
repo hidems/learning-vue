@@ -33,6 +33,10 @@
         <div v-bind:class="[activeClass, errorClass]">
             Class binding by Array
         </div>
+        <br>
+        <div v-bind:class="[isActive ? activeClass : '', errorClass]">
+            Ternary Operator
+        </div>
     </div>
 </body>
 
