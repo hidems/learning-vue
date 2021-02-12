@@ -3,5 +3,6 @@ var vm = new Vue({
   data: {
     awesome: true,
     ok: false,
+    type: 'E',
   }
 }) 
