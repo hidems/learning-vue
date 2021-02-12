@@ -4,5 +4,6 @@ var vm = new Vue({
     awesome: true,
     ok: false,
     type: 'E',
+    loginType: 'username',
   }
 }) 
