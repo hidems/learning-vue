@@ -2,7 +2,7 @@ var vm = new Vue({
   el: '#app',
   data: {
     awesome: true,
-    ok: false,
+    ok: true,
     type: 'E',
     loginType: 'username',
   }
