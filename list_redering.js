@@ -1,14 +1,15 @@
 var vm = new Vue({
   el: '#app',
   data: {
+    from: 'USA',
     items: [
       {
         name: 'John',
-        message: 'Foo'
+        message: 'Hello'
       },
       {
         name: 'Hans',
-        message: 'Bar'
+        message: 'Hallo'
       }
     ]
   }
