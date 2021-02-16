@@ -17,7 +17,7 @@
     <div id="app">
         <ul id="example-1">
             <li v-for="(item, index) in items" :key="item.message">
-                {{ index }}
+                {{ index+1 }}. 
                 From: {{ from }}, 
                 Name:{{ item.name }}, 
                 Message:{{ item.message }}
