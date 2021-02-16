@@ -16,7 +16,8 @@ var vm = new Vue({
         title: 'How to do lists in Vue',
         author: 'Jane Doe',
         publishedAt: '2016-04-10'
-    }
+    },
+    john: null,
   }
 })
 
@@ -27,9 +28,9 @@ vm.items.push(
   }
 )
 
-vm.items.pop()
+// vm.items.pop()
 
-vm.items.shift()
+// vm.items.shift()
 
 vm.items.unshift(
   {
@@ -37,3 +38,7 @@ vm.items.unshift(
     message: 'Good day'
   }
 )
+
+vm.john = vm.items.filter(function (item) {
+  return item.name.match('John')
+})
