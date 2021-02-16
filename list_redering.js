@@ -29,3 +29,11 @@ vm.items.push(
 
 vm.items.pop()
 
+vm.items.shift()
+
+vm.items.unshift(
+  {
+    name: 'Yoko',
+    message: 'Good day'
+  }
+)
