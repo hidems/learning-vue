@@ -5,6 +5,9 @@ var example1 = new Vue({
     name: 'Vue.js',
   },
   methods: {
+    add: function (num) {
+      this.counter += num
+    },
     greet: function (event) {
       // メソッド内の `this` は、 Vue インスタンスを参照します
       alert('Hello ' + this.name + '!')
