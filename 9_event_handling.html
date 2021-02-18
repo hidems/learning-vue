@@ -16,6 +16,7 @@
 <body>
     <div id="app">
         <div id="example-1">
+            <input v-on:keyup.enter="add(4)" v-on:keyup.down="add(-1)">
             <button v-on:click="counter += 1">Add 1</button>
             <button v-on:click="add(2)">Add 2</button>
             <button @click="add(3)">Add 3</button>
