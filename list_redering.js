@@ -19,7 +19,14 @@ var vm = new Vue({
     },
     john: null,
     numbers: [ 34, 1, 2, -5, 3, 4, 123, 5 ]
+  },
+  computed: {
+  evenNumbers: function () {
+    return this.numbers.filter(function (number) {
+      return number % 2 === 0
+    })
   }
+}
 })
 
 vm.items.push(
