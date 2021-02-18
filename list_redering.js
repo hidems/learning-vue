@@ -18,15 +18,24 @@ var vm = new Vue({
         publishedAt: '2016-04-10'
     },
     john: null,
-    numbers: [ 34, 1, 2, -5, 3, 4, 123, 5 ]
+    numbers: [34, 1, 2, -5, 3, 4, 123, 5],
+    sets: [[ 1, 2, 3, 4, 5 ], [6, 7, 8, 9, 10]]
   },
   computed: {
-  evenNumbers: function () {
-    return this.numbers.filter(function (number) {
-      return number % 2 === 0
-    })
+    evenNumbers: function () {
+      // this.numbers.sort()
+      return this.numbers.filter(function (number) {
+        return number % 2 === 0
+      })
+    }
+  },
+  methods: {
+    even: function (numbers) {
+      return numbers.filter(function (number) {
+        return number % 2 === 0
+      })
+    }
   }
-}
 })
 
 vm.items.push(

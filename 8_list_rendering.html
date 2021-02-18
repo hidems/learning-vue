@@ -39,6 +39,11 @@
         <li v-for="n in evenNumbers">
             {{ n }}
         </li>
+        <hr>
+        <ul v-for="set in sets">
+            {{ set }}
+            <li v-for="n in even(set)">{{ n }}</li>
+        </ul>
     </div>
 </body>
 
