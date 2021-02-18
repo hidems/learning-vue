@@ -18,6 +18,7 @@ var vm = new Vue({
         publishedAt: '2016-04-10'
     },
     john: null,
+    numbers: [ 34, 1, 2, -5, 3, 4, 123, 5 ]
   }
 })
 
