@@ -15,6 +15,6 @@ var example1 = new Vue({
       if (event) {
         alert(event.target.tagName)
       }
-    }
+    },
   }
 })
