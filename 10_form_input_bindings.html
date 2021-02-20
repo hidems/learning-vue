@@ -48,6 +48,15 @@
         <label for="two">Two</label>
         <br>
         <span>Picked: {{ picked }}</span>
+
+        <hr>
+        <select v-model="selected">
+            <option disabled value="">Please select one</option>
+            <option value="apple">A</option>
+            <option value="Beta">B</option>
+            <option >C</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
     </div>
 </body>
 
