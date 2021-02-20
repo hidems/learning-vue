@@ -27,6 +27,8 @@
         <hr>
         <input type="checkbox" v-model="checked">
         <label>{{ checked }}</label>
+        <label v-if="checked">check!!</label>
+        <label v-else>Not check</label>
     </div>
 </body>
 
