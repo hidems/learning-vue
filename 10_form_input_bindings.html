@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Practice/Form Input Bindings</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        .active {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="message" placeholder="edit me">
+        <p>Message is: {{ message }}</p>
+    </div>
+</body>
+
+<script src="form_input_bindings.js"></script>
+
+</html>
