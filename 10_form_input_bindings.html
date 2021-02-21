@@ -2,71 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Practice/Form Input Bindings</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <style>
-        .active {
-            background-color: aquamarine;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Practice/Form Input Bindings</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <style>
+    .active {
+        background-color: aquamarine;
+    }
+  </style>
 </head>
 
 <body>
-    <div id="app">
-        <input v-model="message" placeholder="edit me">
-        <p>Message is: {{ message }}</p>
+  <div id="app">
+    <input v-model="message" placeholder="edit me">
+    <p>Message is: {{ message }}</p>
 
-        <hr>
-        <span>Multiline message is:</span>
-        <p style="white-space: pre-line;">{{ message }}</p>
-        <br>
-        <textarea v-model="message" placeholder="add multiple lines"></textarea>
+    <hr>
+    <span>Multiline message is:</span>
+    <p style="white-space: pre-line;">{{ message }}</p>
+    <br>
+    <textarea v-model="message" placeholder="add multiple lines"></textarea>
 
-        <hr>
-        <input type="checkbox" v-model="checked">
-        <label>{{ checked }}</label>
-        <label v-if="checked">check!!</label>
-        <label v-else>Not check</label>
+    <hr>
+    <input type="checkbox" v-model="checked">
+    <label>{{ checked }}</label>
+    <label v-if="checked">check!!</label>
+    <label v-else>Not check</label>
 
-        <hr>
-        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-        <label for="jack">Jack</label>
-        <input type="checkbox" id="john" value="John" v-model="checkedNames">
-        <label for="john">John</label>
-        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-        <label for="mike">Mike</label>
-        <br>
-        <span>Checked names: {{ checkedNames }}</span>
+    <hr>
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+    <br>
+    <span>Checked names: {{ checkedNames }}</span>
 
-        <hr>
-        <input type="radio" id="one" value="One" v-model="picked">
-        <label for="one">One</label>
-        <br>
-        <input type="radio" id="two" value="Two" v-model="picked">
-        <label for="two">Two</label>
-        <br>
-        <span>Picked: {{ picked }}</span>
+    <hr>
+    <input type="radio" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+    <br>
+    <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+    <br>
+    <span>Picked: {{ picked }}</span>
 
-        <hr>
-        <select v-model="selected">
-            <option disabled value="">Please select one</option>
-            <option value="apple">A</option>
-            <option value="Beta">B</option>
-            <option >C</option>
-        </select>
-        <span>Selected: {{ selected }}</span>
+    <hr>
+    <select v-model="selected">
+      <option disabled value="">Please select one</option>
+      <option value="apple">A</option>
+      <option value="Beta">B</option>
+      <option >C</option>
+    </select>
+    <span>Selected: {{ selected }}</span>
 
-        <hr>
-        <select v-model="multi_selected" multiple>
-          <option>A</option>
-          <option>B</option>
-          <option>C</option>
-        </select>
-<br>
-<span>Selected: {{ multi_selected }}</span>
-    </div>
+    <hr>
+    <select v-model="multi_selected" multiple>
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <br>
+    <span>Selected: {{ multi_selected }}</span>
+
+    <hr>
+    <select v-model="vfor_selected">
+      <option v-for="option in options" v-bind:value="option.value">
+        {{ option.text }}
+      </option>
+    </select>
+    <span>Selected: {{ vfor_selected }}</span>
+  </div>
 </body>
 
 <script src="form_input_bindings.js"></script>
