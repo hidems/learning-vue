@@ -57,6 +57,15 @@
             <option >C</option>
         </select>
         <span>Selected: {{ selected }}</span>
+
+        <hr>
+        <select v-model="multi_selected" multiple>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+        </select>
+<br>
+<span>Selected: {{ multi_selected }}</span>
     </div>
 </body>
 

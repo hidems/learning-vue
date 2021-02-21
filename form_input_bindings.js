@@ -6,5 +6,6 @@ var vm = new Vue({
     checkedNames: [],
     picked: '',
     selected: '',
+    multi_selected: '',
   }
 })
