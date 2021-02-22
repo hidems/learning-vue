@@ -41,10 +41,10 @@
     <span>Checked names: {{ checkedNames }}</span>
 
     <hr>
-    <input type="radio" id="one" value="One" v-model="picked">
+    <input type="radio" id="one" value="Eins" v-model="picked">
     <label for="one">One</label>
     <br>
-    <input type="radio" id="two" value="Two" v-model="picked">
+    <input type="radio" id="two" value="Zwei" v-model="picked">
     <label for="two">Two</label>
     <br>
     <span>Picked: {{ picked }}</span>
@@ -74,6 +74,15 @@
       </option>
     </select>
     <span>Selected: {{ vfor_selected }}</span>
+
+    <hr>
+    <input
+      type="checkbox"
+      v-model="toggle"
+      true-value="Ja"
+      false-value="Nein"
+    >
+    <label>{{ toggle }}</label>
   </div>
 </body>
 

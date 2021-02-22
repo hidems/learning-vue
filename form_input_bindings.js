@@ -7,7 +7,8 @@ var vm = new Vue({
     picked: '',
     selected: '',
     multi_selected: '',
-    vfor_selected: 'A',
+    vfor_selected: 'B',
+    toggle: '',
     options: [
       { text: 'One', value: 'A' },
       { text: 'Two', value: 'B' },
