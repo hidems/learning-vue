@@ -11,10 +11,16 @@ var vm = new Vue({
     vfor_selected: 'B',
     toggle: '',
     lazy: '',
+    age: '',
     options: [
       { text: 'One', value: 'A' },
       { text: 'Two', value: 'B' },
       { text: 'Three', value: 'C' }
     ]
+  },
+  computed: {
+    answer: function () {
+      return this.age + 20 
+    }
   }
 })
