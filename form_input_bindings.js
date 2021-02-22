@@ -10,6 +10,7 @@ var vm = new Vue({
     multi_selected: '',
     vfor_selected: 'B',
     toggle: '',
+    lazy: '',
     options: [
       { text: 'One', value: 'A' },
       { text: 'Two', value: 'B' },

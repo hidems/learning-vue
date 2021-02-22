@@ -87,7 +87,10 @@
     <hr>
     <input type="radio" v-model="picked2" v-bind:value="vfor_selected">
     <label>{{ picked2 }}</label>
-    
+
+    <hr>
+    <input v-model.lazy="lazy">
+    <p>{{ lazy }}</p>
   </div>
 </body>
 
