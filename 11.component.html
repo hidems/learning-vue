@@ -18,9 +18,12 @@
       <button-counter></button-counter>
 
       <hr>
-      <blog-post title="My journey with Vue"></blog-post>
-      <blog-post title="Blogging with Vue"></blog-post>
-      <blog-post title="Why Vue is so fun"></blog-post>
+      <blog-post title="My journey with Vue" body="aaaaa"></blog-post>
+      <blog-post title="Blogging with Vue" body="bbbbb"></blog-post>
+      <blog-post title="Why Vue is so fun" body="ccccc"></blog-post>
+
+      <hr>
+      <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title[0]"></blog-post>
   </div>
 </body>
 

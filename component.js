@@ -8,10 +8,17 @@ Vue.component('button-counter', {
 })
 
 Vue.component('blog-post', {
-  props: ['title'],
-  template: '<h3>Title: {{ title }}</h3>'
+  props: ['title', 'body'],
+  template: '<div><h3>Title: {{ title }}</h3><p>{{ body }}</p></div>'
 })
 
 new Vue({
-  el: '#components-demo'
+  el: '#components-demo',
+  data: {
+    posts: [
+      { id: 1, title: 'My journey with Vue' },
+      { id: 2, title: 'Blogging with Vue' },
+      { id: 3, title: 'Why Vue is so fun' }
+    ]
+  }
 })
