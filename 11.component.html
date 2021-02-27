@@ -23,7 +23,19 @@
       <blog-post title="Why Vue is so fun" body="ccccc"></blog-post>
 
       <hr>
-      <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title[0]"></blog-post>
+      <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
+  </div>
+
+  <hr>
+  <div id="blog-posts-events-demo">
+    <div :style="{ fontSize: postFontSize + 'em' }">
+      <blog-post-2
+        v-for="post in posts"
+        v-bind:key="post.id"
+        v-bind:post="post"
+        v-on:enlarge-text="postFontSize += 0.1"
+      ></blog-post-2>
+    </div>
   </div>
 </body>
 

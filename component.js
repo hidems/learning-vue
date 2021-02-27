@@ -12,6 +12,19 @@ Vue.component('blog-post', {
   template: '<div><h3>Title: {{ title }}</h3><p>{{ body }}</p></div>'
 })
 
+Vue.component('blog-post-2', {
+  props: ['post'],
+  template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <button v-on:click="$emit('enlarge-text')">
+        Enlarge text
+      </button>
+      <div v-html="post.content"></div>
+    </div>
+    `
+})
+
 new Vue({
   el: '#components-demo',
   data: {
@@ -20,5 +33,17 @@ new Vue({
       { id: 2, title: 'Blogging with Vue' },
       { id: 3, title: 'Why Vue is so fun' }
     ]
+  }
+})
+
+new Vue({
+  el: '#blog-posts-events-demo',
+  data: {
+    posts: [
+      { id: 1, title: 'My journey with Vue', content: 'aaaaaa' },
+      { id: 2, title: 'Blogging with Vue', content: 'bbbbbbb' },
+      { id: 3, title: 'Why Vue is so fun', content: 'cccccccc' }
+    ],
+    postFontSize: 1
   }
 })
