@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic Components Example</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label class="col-md-2 control-label">色</label>
+          <div class="col-md-10">
+            <input class="form-control" v-model="a" />
+            <div class="help-block" :style="{color: a}">
+              ■
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/color_code.js"></script>
+  </body>
+</html>
