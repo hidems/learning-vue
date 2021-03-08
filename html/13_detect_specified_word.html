@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detect specified word</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label class="col-md-2 control-label">Title</label>
+          <div class="col-md-10">
+            <input class="form-control" v-model="a" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <!-- <div class="btn btn-primary" :disabled="b">
+              Merge
+            </div> -->
+            <textarea name="" id="" cols="30" rows="10" :disabled="b"></textarea>
+            <label v-if="b">Disable!!</label>
+            <label v-else>Enable</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/13_detect_specified_word.js"></script>
+  </body>
+</html>
