@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detect specified word</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label class="col-md-2 control-label">パスワード</label>
+          <div class="col-md-10">
+            <input class="form-control" type="password" ref="r1" v-model="p" v-if="t == 'password'" />
+            <input class="form-control" type="text" ref="r2" v-model="p" v-if="t == 'text'" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="../js/show_pass_only_input.js"></script>
+  </body>
+</html>
