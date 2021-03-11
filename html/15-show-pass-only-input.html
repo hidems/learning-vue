@@ -11,14 +11,14 @@
         <div class="form-group">
           <label class="col-md-2 control-label">パスワード</label>
           <div class="col-md-10">
-            <input class="form-control" type="password" ref="r1" v-model="p" v-if="t == 'password'" />
-            <input class="form-control" type="text" ref="r2" v-model="p" v-if="t == 'text'" />
+            <input class="form-control" type="password" ref="password" v-model="passwordValue" v-if="triggerShowPassword == 'password'" />
+            <input class="form-control" type="text" ref="text" v-model="passwordValue" v-if="triggerShowPassword == 'text'" />
           </div>
         </div>
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
-    <script src="../js/show_pass_only_input.js"></script>
+    <script src="../js/show-pass-only-input.js"></script>
   </body>
 </html>
