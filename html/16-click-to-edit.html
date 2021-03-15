@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Click to Edit</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <template v-if="focus">
+        <input v-model="content" @keyup.enter="focus = false" @blur="focus = false" ref="ref_1" />
+      </template>
+      <template v-else="">
+        <span @click="edit">{{ content }}</span>
+      </template>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="../js/click-to-edit.js"></script>
+  </body>
+</html>
