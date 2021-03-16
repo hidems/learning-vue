@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expand textarea by line break</title>
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="form-horizontal">
+        <div class="form-group">
+          <label class="col-md-2 control-label">Content</label>
+          <div class="col-md-10">
+            <textarea class="form-control" v-model="content" :rows="content.split(/\n/).length + 1"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="../js/expand-textarea.js"></script>
+  </body>
+</html>
