@@ -14,7 +14,7 @@ var vm = new Vue({
     styleObject: {
       color: 'blue',
       fontSize: '100px'
-  }
+    }
   },
   computed: {
     classObjectByComputed: function () {
