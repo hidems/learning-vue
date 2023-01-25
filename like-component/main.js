@@ -7,14 +7,15 @@ Vue.component('like-component', {
   },
   data: function () {
     return {
-      count: 0
+      count: 0,
+      comment: 'I Like it.'
     }
   },
   template: '<button @click="countUp">{{ message }} {{ count }}</button>',
   methods: {
     countUp: function () {
       this.count++;
-      this.$emit('increment');
+      this.$emit('increment', this.comment, `count: ${this.count}`);
     }
   }
 })
@@ -25,8 +26,10 @@ new Vue({
     total: 0
   },
   methods: {
-    incrementTotal: function () {
+    incrementTotal: function (comment, count) {
       this.total++;
+      console.log(comment);
+      console.log(count);
     }
   }
 });
