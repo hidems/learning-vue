@@ -14,10 +14,16 @@
   </style>
 </head>
 <body>
-  <!-- <div id="app"> -->
-  <div id="app" v-cloak>
+
+  <!-- v-cloak is a directive that prevents the display of mustache bindings until the Vue instance is ready. -->
+  <div id="app">
     <div v-cloak>{{ test1 }}</div>
     <div>{{ test2 }}</div>
+  </div>
+
+  <div id="app2" v-cloak>
+    <div>{{ test3 }}</div>
+    <div v-cloak>{{ test4 }}</div>
   </div>
 
   <script>
@@ -28,6 +34,18 @@
           return {
             test1: 'With v-cloak',
             test2: 'Without v-cloak',
+          }
+        }
+      })
+    }, 3000)
+
+    setTimeout(() => {
+      var app2 = new Vue({
+        el: '#app2',
+        data() {
+          return {
+            test3: 'Test v-cloak',
+            test4: 'Test2 v-cloak',
           }
         }
       })
