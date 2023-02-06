@@ -27,9 +27,9 @@
       },
       computed: {
         // totalComputed() {
-        //   return this.price * this.quantity
+        //   return this.price * this.quantity // this => app
         // }
-        totalComputed: app => app.price * app.quantity
+        totalComputed: app => app.price * app.quantity // app => app, not this => app
       },
       methods: {
         totalMethods() {
