@@ -7,6 +7,7 @@
   <title>Transition</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <link rel="stylesheet" href="app.css">
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
   <style>
     .target { transition: opacity 1s; }
     .target.is-hidden { opacity: 0; }
@@ -29,9 +30,18 @@
   <div id="app">
     <button @click="isShow = !isShow">Show/Hide</button>
     <transition name="fade">
-      <div v-show="isShow">You can see Vuw Transition.</div>
+      <div v-show="isShow">You can see Vue Fade.</div>
     </transition>
-  </div>
+    <transition name="slide-fade">
+      <div v-show="isShow">You can see Vuw Slide Fade.</div>
+    </transition>
+    <transition
+      name="custom-classes-transition"
+      enter-active-class="animated tada"
+      leave-active-class="animated bounceOutRight"
+    >
+      <p v-if="isShow">hello</p>
+    </div>
 
   <script>
     var app = new Vue({

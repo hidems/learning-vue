@@ -15,4 +15,19 @@
 }
 .fade-leave-active {
   transition: opacity 10s;
+}
+
+.slide-fade-enter {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }/*# sourceMappingURL=app.css.map */

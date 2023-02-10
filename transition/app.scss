@@ -18,3 +18,22 @@
     }
   }
 }
+
+.slide-fade {
+  &-enter {
+    transform: translateX(10px);
+    opacity: 0;
+    &-active {
+      transition: all .3s ease;
+    }
+  }
+  &-leave {
+    &-to {
+      transform: translateX(10px);
+      opacity: 0;
+    }
+    &-active {
+      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+  }
+}
