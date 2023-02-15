@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V-model</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <form>
+      Name:
+      <input type="text" v-model="contact.name">
+      <br/>
+      Tel:
+      <input type="tel" v-model.number="contact.tel">
+      <br/>
+      Email:
+      <input type="email" v-model.lazy.trim="contact.email">
+      <br/>
+      Gender:
+      <input type="radio" value="Man" v-model="contact.gender">Man
+      <input type="radio" value="Woman" v-model="contact.gender">Woman
+      <input type="radio" value="Other" v-model="contact.gender">Other
+      <br/>
+      Age:
+      <select v-model="contact.age">
+        <option disabled value="">Select your age</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="40">40</option>
+        <option value="50">50</option>
+      </select>
+      <br/>
+      Message:
+      <textarea v-model="contact.message"></textarea>
+      <br/>
+      Attracts:
+      <input type="checkbox" value="Music" v-model="contact.attracts">Music
+      <input type="checkbox" value="Movie" v-model="contact.attracts">Movie
+      <input type="checkbox" value="Sports" v-model="contact.attracts">Sports
+      <br/>
+      Caution:
+      <input type="checkbox" v-model="contact.caution">
+      <br/>
+      <button>Submit</button>
+    </form>
+
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          contact: {
+            name: '',
+            tel: '',
+            email: '',
+            gender: '',
+            age: '',
+            message: '',
+            attracts: [],
+            caution: false
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
