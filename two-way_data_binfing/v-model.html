@@ -6,10 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>V-model</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
-    <form>
+    <p v-if="errors.length">
+      <ul>
+        <li class="error" v-for="error in errors">{{ error }}</li>
+      </ul>
+    </p>
+    <form @submit.prevent="validate">
       Name:
       <input type="text" v-model="contact.name">
       <br/>
@@ -64,6 +74,26 @@
             message: '',
             attracts: [],
             caution: false
+          },
+          errors: []
+        }
+      },
+      methods: {
+        validate() {
+          this.errors = []
+          if (!this.contact.name) {
+            this.errors.push('Name is required.')
+          } else if (this.contact.name.length < 3) {
+            this.errors.push('Name must be at least 3 characters.')
+          }
+          if (!this.contact.gender) {
+            this.errors.push('Gender is required.')
+          }
+          if (!this.contact.caution) {
+            this.errors.push('Caution is required.')
+          }
+          if (!this.errors.length) {
+            alert('Success!')
           }
         }
       }

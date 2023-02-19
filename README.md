@@ -17,4 +17,4 @@
 
 ## Two-way data binding
 - v-bind and v-on
-- v-model
+- v-model, form
