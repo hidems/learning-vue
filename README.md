@@ -17,4 +17,8 @@
 
 ## Two-way data binding
 - v-bind and v-on
-- v-model, form
+- v-model, form, form validation, validation by computed
+
+## todo
+- v-for with filter by computed
+- methods, add and delete item

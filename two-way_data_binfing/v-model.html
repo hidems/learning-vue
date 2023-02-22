@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V-model</title>
+  <title>V-model, Validation</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <style>
+    [v-cloak] {
+      display: none;
+    }
     .error {
       color: red;
     }
@@ -21,8 +24,11 @@
     </p>
     <form @submit.prevent="validate">
       Name:
-      <input type="text" v-model="contact.name">
+      <input type="text" v-model="yourName">
       <br/>
+      <p :class="{error: hasError.yourName}">{{ contact.name.length }} / 20</p>
+      <p v-show="hasError.yourName" class="error">Name must be longer than 3 and less than 20</p>
+
       Tel:
       <input type="tel" v-model.number="contact.tel">
       <br/>
@@ -75,7 +81,10 @@
             attracts: [],
             caution: false
           },
-          errors: []
+          errors: [],
+          hasError: {
+            yourName: false,
+          }
         }
       },
       methods: {
@@ -85,6 +94,8 @@
             this.errors.push('Name is required.')
           } else if (this.contact.name.length < 3) {
             this.errors.push('Name must be at least 3 characters.')
+          } else if (this.contact.name.length > 20) {
+            this.errors.push('Name must be less than 20 characters.')
           }
           if (!this.contact.gender) {
             this.errors.push('Gender is required.')
@@ -94,6 +105,23 @@
           }
           if (!this.errors.length) {
             alert('Success!')
+          }
+        }
+      },
+      computed: {
+        yourName: {
+          get() {
+            return this.contact.name
+          },
+          set(value) {
+            if (value.length < 3) {
+              this.hasError.yourName = true
+            } else if (value.length > 20) {
+              this.hasError.yourName = true
+            } else {
+              this.hasError.yourName = false
+            }
+            this.contact.name = value
           }
         }
       }
