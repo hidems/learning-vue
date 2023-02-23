@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="getDogImage">Get Dog Image</button>
+    <img :src="dogImage">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+
+  <script>
+    const url = 'https://dog.ceo/api/breeds/image/random'
+    const options = {
+      method: 'get',
+    }
+
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          dogImage: ''
+        }
+      },
+      methods: {
+        async getDogImage() {
+          const responce = await fetch(url, options).then( responce => responce.json() )
+          console.log(responce)
+          this.dogImage = responce.message
+        }
+      },
+      created() {
+        this.getDogImage()
+      }
+    })
+  </script>
+</body>
+</html>
