@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Props</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <style>
+    .parent {
+      width: 800px;
+      margin: 0 auto;
+      border: 1px solid red;
+    }
+    .child {
+      width: 30%;
+      margin: 0 auto;
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="parent">
+    {{ message }}
+    <my-component title="1st component" class="child"></my-component>
+    <my-component class="child"></my-component>
+    <my-component disabled="true" class="child"></my-component>
+
+  </div>
+
+  <script>
+    let myComponent = Vue.component('my-component', {
+      template: `
+        <div>
+          A local component!
+          {{ getTitle }}
+        </div>
+      `,
+      props: {
+        title: {
+          type: String,
+          default: 'Default Title'
+        },
+        disables: {
+          type: Boolean,
+          default: false
+        }
+      },
+      data() {
+        return {
+          getTitle: this.title
+        }
+      }
+    })
+
+    var app = new Vue({
+      el: '#app',
+      components: { myComponent },
+      data() {
+        return {
+          message: 'Hello Props'
+        }
+      }
+    })
+  </script>
+</body>
+</html>
