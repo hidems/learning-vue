@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lodash</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="item in debounces">{{ item }}</li>
+      <li v-for="item in throttles">{{ item }}</li>
+    </ul>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4/lodash.js"></script>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          debounces: [],
+          throttles: []
+        }
+      },
+      mounted() {
+        window. addEventListener('resize', _.debounce(() => {
+          this.debounces.push('Debounce 3s Lodash!');
+        }, 3000))
+        window. addEventListener('resize', _.throttle(() => {
+          this.throttles.push('Throttle 3s Lodash!');
+        }, 3000))
+      }
+    })
+  </script>
+</body>
+</html>
