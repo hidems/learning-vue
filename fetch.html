@@ -8,9 +8,14 @@
 <body>
   <div id="app">
     <button @click="getDogImage">Get Dog Image</button>
+    <br/>
+    Watch the Input <input type="text" v-model="watchTest">
+    <br/>
     <img :src="dogImage">
+
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4/lodash.js"></script>
 
   <script>
     const url = 'https://dog.ceo/api/breeds/image/random'
@@ -22,7 +27,8 @@
       el: '#app',
       data() {
         return {
-          dogImage: ''
+          dogImage: '',
+          watchTest: ''
         }
       },
       methods: {
@@ -32,8 +38,14 @@
           this.dogImage = responce.message
         }
       },
+      watch: {
+        watchTest() {
+          this.watchDogImage()
+        }
+      },
       created() {
         this.getDogImage()
+        this.watchDogImage = _.debounce(this.getDogImage, 500)
       }
     })
   </script>
