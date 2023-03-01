@@ -23,7 +23,7 @@
   <div id="app" class="parent">
     {{ message }}
     <my-component title="1st component" class="child"></my-component>
-    <my-component class="child"></my-component>
+    <my-component :title="parentTitle" class="child"></my-component>
     <my-component disabled="true" class="child"></my-component>
 
   </div>
@@ -58,7 +58,8 @@
       components: { myComponent },
       data() {
         return {
-          message: 'Hello Props'
+          message: 'Hello Props',
+          parentTitle: 'Parent Title'
         }
       }
     })
