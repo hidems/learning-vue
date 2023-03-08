@@ -22,3 +22,18 @@
 ## todo
 - v-for with filter by computed
 - methods, add and delete item
+
+## lodash
+- debounce
+- throttle
+
+## fetch
+- fetch
+- watch + api
+
+## component
+- lobal component
+- global component
+- props
+- emit
+- emit, two way binding, v-model and v-on and binding
