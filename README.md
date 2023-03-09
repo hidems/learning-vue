@@ -37,3 +37,4 @@
 - props
 - emit
 - emit, two way binding, v-model and v-on and binding
+- event bus
