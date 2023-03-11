@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slot</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <style>
+    .parent {
+      width: 800px;
+      margin: 0 auto;
+      border: 1px solid red;
+    }
+    .child {
+      width: 30%;
+      margin: 0 auto;
+      border: 1px solid blue;
+    }
+    .grandchild {
+      width: 30%;
+      margin: 0 auto;
+      border: 1px solid green;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="parent">
+    <p>Parent Component</p>
+    <child-component class="child">Slot Text</child-component>
+
+    <child-component class="child">
+      <child-component class="child"></child-component>
+    </child-component>
+  </div>
+
+  <script>
+    let childComponent = {
+      template: `
+        <div>
+          <div>
+            Text 1
+            <slot>Text 2</slot>
+            Text3
+          </div>
+        </div>
+      `
+    }
+
+    var app = new Vue({
+      el: '#app',
+      components: { childComponent },
+      data() {
+        return {
+        }
+      },
+    })
+  </script>
+</body>
+</html>
