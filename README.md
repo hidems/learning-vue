@@ -39,3 +39,5 @@
 - emit, two way binding, v-model and v-on and binding
 - event bus
 - slot
+- named slot, v-slot or #
+- scoped slot, v-slot:default=""
