@@ -35,9 +35,14 @@
 - lobal component
 - global component
 - props
-- emit
-- emit, two way binding, v-model and v-on and binding
-- event bus
 - slot
 - named slot, v-slot or #
 - scoped slot, v-slot:default=""
+
+## vue-router
+- https://v3.router.vuejs.org/ja/guide/#javascript
+
+## emit
+- emit
+- emit, two way binding, v-model and v-on and binding
+- event bus
