@@ -46,3 +46,9 @@
 - emit
 - emit, two way binding, v-model and v-on and binding
 - event bus
+
+## Google Books API
+
+## Local Storage
+- https://jp.vuejs.org/v2/cookbook/client-side-storage.html
+- Dev Tool->Application->Local Storage
