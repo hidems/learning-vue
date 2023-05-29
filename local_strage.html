@@ -25,6 +25,8 @@
   </div>
 
   <script>
+    STORAGE_KEY = 'cats';
+
     var app = new Vue({
       el: '#app',
       data() {
@@ -34,11 +36,11 @@
         }
       },
       mounted() {
-        if (localStorage.getItem('cats')) {
+        if (localStorage.getItem(STORAGE_KEY)) {
           try {
-            this.cats = JSON.parse(localStorage.getItem('cats'));
+            this.cats = JSON.parse(localStorage.getItem(STORAGE_KEY));
           } catch(e) {
-            localStorage.removeItem('cats');
+            localStorage.removeItem(STORAGE_KEY);
           }
         }
       },
@@ -52,13 +54,13 @@
           this.newCat = '';
           this.saveCats();
         },
-        saveCats() {
-          const parsed = JSON.stringify(this.cats);
-          localStorage.setItem('cats', parsed);
-        },
         removeCat(x) {
           this.cats.splice(x, 1);
           this.saveCats();
+        },
+        saveCats() {
+          const parsed = JSON.stringify(this.cats);
+          localStorage.setItem(STORAGE_KEY, parsed);
         }
       }
     })

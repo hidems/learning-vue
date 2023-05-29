@@ -52,3 +52,4 @@
 ## Local Storage
 - https://jp.vuejs.org/v2/cookbook/client-side-storage.html
 - Dev Tool->Application->Local Storage
+  - Show, Edit, Delete Local Storage value
